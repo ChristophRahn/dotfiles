@@ -8,7 +8,7 @@ Since the current shell for WSL has some issues with zsh, you might want to use 
 ### WSL Configuration / Install
 Run the following to configure WSL from scratch...
 ```sh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChristophRahn/dotfiles/wsl/configure.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChristophRahn/dotfiles/master/configure.sh)"
 ```
 ### WSL Emulator Install
 Run the following command from an Administrator PowerShell prompt...
