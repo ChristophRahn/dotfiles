@@ -74,14 +74,14 @@ set -g @tasks_icon_outstanding '+ '
 # Status bar ------------------------------------------------------------- 
 # set-option -g status on
 set-option -g set-titles on
-set -g status-interval 1
+set -g status-interval 2
 set-option -g update-environment "SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION DISPLAY"
 
 set -g status-position bottom
 set -g status-bg colour237
 set -g status-fg colour137
 set -g status-attr 'none'
-set -g status-left ' #[fg=colour197]#(~/bin/internet_info.sh) '
+set -g status-left ' '
 set -g status-right '#(eval ~/.tmux/responsive `tmux display -p "#{client_width}"`)#[fg=colour165]#[bg=default] #H'
 set -g status-right-length 100
 set -g status-left-length 80
