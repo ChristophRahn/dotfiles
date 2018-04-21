@@ -13,7 +13,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChristophRahn/dotfiles/w
 ### WSL Emulator Install
 Run the following command from an Administrator PowerShell prompt...
 ```powershell
-Set-ExecutionPolicy Bypass; irm 'https://raw.githubusercontent.com/ChristophRahn/dotfiles/wsl/wslterm.ps1' | iex;
+Set-ExecutionPolicy Bypass; irm 'https://raw.githubusercontent.com/ChristophRahn/dotfiles/master/wslterm.ps1' | iex;
 ```
 
 ## Notes
