@@ -3,18 +3,22 @@
 ## WSL specifics
 
 The configure script in this repo sets up your entire system from scratch.
-Since the current shell for WSL has some issues with zsh, you might want to use the [emulator from goreliu](https://github.com/goreliu/wsl-terminal).
+Since the current shell for WSL has some issues with scripts running in the tmux status bar, I highly recommend to use the [emulator from goreliu](https://github.com/goreliu/wsl-terminal).
 
 ### WSL Configuration / Install
 Run the following to configure WSL from scratch...
 ```sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ChristophRahn/dotfiles/master/configure.sh)"
 ```
-### WSL Emulator Install
+### WSL Emulator Install and Setup
 Run the following command from an Administrator PowerShell prompt...
 ```powershell
 Set-ExecutionPolicy Bypass; irm 'https://raw.githubusercontent.com/ChristophRahn/dotfiles/master/wslterm.ps1' | iex;
 ```
+
+For zsh to start as the default shell, we need to change the base configuration for the emulator. To fix this, you will find a wsl-terminal.conf file in the /mnt/c/Users/[UserProfile]/wsl-terminal/etc directory. You need to comment out line 4 and uncomment line 6, as [Jessica explained in her blog](http://jessicadeen.com/tech/badass-terminal-wsl-macos-and-ubuntu-dotfiles-update/).
+You also want to select a theme for the emulator, *base16-solarized-dark.minttyrc* is highly recommended. Finally we have to install a font that supports all the unicode characters used in this shell theme.
+There are two fonts available in this repository, pick your favorite. From my experience, the *Source Code Pro Nerd Font* seems to play nicely with higher DPI monitors like the Dell 2716DG 1440p one I use at home.
 
 ## Notes
 Your dotfiles are how you personalize your system. These are mine.
