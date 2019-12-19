@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+SESSION="vscode`pwd | md5sum | cut -f 1 -d " "`"
+
+tmux -f ~/.tmux-code.conf attach-session -d -t $SESSION || tmux -f ~/.tmux-code.conf new-session -s $SESSION
