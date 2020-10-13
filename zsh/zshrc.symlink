@@ -96,11 +96,11 @@ DEFAULT_USER="crahn"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo git history taskwarrior tmux tmuxinator zsh-autosuggestions)
+plugins=(sudo git history taskwarrior tmux tmuxinator zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -138,3 +138,23 @@ export PATH=$PATH:~/bin
 # az cli
 # autoload bashcompinit && bashcompinit
 # source /usr/bin/az
+export PATH=$PATH:/home/crahn/.go/bin
+
+export GOPATH=/home/crahn/go
+
+export PATH=$PATH:/home/crahn/go/bin
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/crahn/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/crahn/miniconda/etc/profile.d/conda.sh" ]; then
+        . "/home/crahn/miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/crahn/miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
