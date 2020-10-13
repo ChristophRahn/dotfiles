@@ -99,7 +99,18 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo ''
 	echo "Now pulling down christoph's dotfiles..."
-	git clone https://github.com/ChristophRahn/dotfiles.git ~/.dotfiles
+    if version=$(dpkg-query -W -f='${Version}' tmux 2>/dev/null); then 
+
+        # Check if it's older than 2.8
+        if dpkg --compare-versions "$version" '<=' 2.8; then
+            printf 'tmux version <= 2.8, installing v1.2.\n'
+            git clone --branch v1.2 https://github.com/ChristophRahn/dotfiles.git ~/.dotfiles
+        else
+            printf 'tmux version >= 2.9, installing latest version.\n'
+            git clone https://github.com/ChristophRahn/dotfiles.git ~/.dotfiles
+        fi
+    fi
+	
 	echo ''
 	cd $HOME/.dotfiles && echo "switched to .dotfiles dir..."
 	echo ''
